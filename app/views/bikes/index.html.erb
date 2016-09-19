@@ -16,7 +16,7 @@
     <tbody>
       <% @bikes.each do |bike| %>
         <tr>
-          <td><%= bike.name %></td>
+          <td><%= link_to bike.name, bike %></td>
           <td><%= bike.user_id %></td>
           <td><%= bike.year %></td>
           <td><%= bike.color %></td>
