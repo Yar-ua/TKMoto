@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   
 
   root to: 'home#start'
+  
+  get '/' => 'home#start'
   get 'home/start'
 
   get 'home/about'
