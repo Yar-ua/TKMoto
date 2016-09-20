@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fuel Stata</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fuel_stata.each do |fuel_statum| %>
+      <tr>
+        <td><%= link_to 'Show', fuel_statum %></td>
+        <td><%= link_to 'Edit', edit_fuel_statum_path(fuel_statum) %></td>
+        <td><%= link_to 'Destroy', fuel_statum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fuel Statum', new_fuel_statum_path %>

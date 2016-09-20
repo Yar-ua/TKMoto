@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160919185857) do
+ActiveRecord::Schema.define(version: 20160920181422) do
 
   create_table "bikes", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,19 @@ ActiveRecord::Schema.define(version: 20160919185857) do
     t.string   "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "fuel_stata", force: :cascade do |t|
+    t.integer  "bike_id"
+    t.float    "odo"
+    t.float    "odo_delta"
+    t.float    "refueling"
+    t.float    "price_fuel"
+    t.string   "fuel_station"
+    t.string   "fuel_type"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["bike_id"], name: "index_fuel_stata_on_bike_id"
   end
 
 end

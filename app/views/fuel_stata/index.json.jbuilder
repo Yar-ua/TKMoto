@@ -1,0 +1,1 @@
+json.array! @fuel_stata, partial: 'fuel_stata/fuel_statum', as: :fuel_statum

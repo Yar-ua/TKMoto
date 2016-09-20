@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  resources :fuel_stata
   resources :bikes
+
   
 
   root to: 'home#start'

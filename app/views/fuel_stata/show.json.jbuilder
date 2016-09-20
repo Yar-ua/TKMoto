@@ -1,0 +1,1 @@
+json.partial! "fuel_stata/fuel_statum", fuel_statum: @fuel_statum
