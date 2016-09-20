@@ -26,6 +26,7 @@ class FuelStataController < ApplicationController
   def create
     @fuel_statum = FuelStatum.new(fuel_statum_params)
 
+
     respond_to do |format|
       if @fuel_statum.save
         format.html { redirect_to @fuel_statum, notice: 'Fuel statum was successfully created.' }
@@ -69,6 +70,8 @@ class FuelStataController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fuel_statum_params
-      params.fetch(:fuel_statum, {})
+      params.require(:fuel_statum).permit(:odo, :odo_delta, :refueling, :price_fuel, :fuel_station, :fuel_type)
+
+      #params.fetch(:fuel_statum, {})
     end
 end

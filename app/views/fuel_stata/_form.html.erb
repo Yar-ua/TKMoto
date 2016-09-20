@@ -11,7 +11,39 @@
     </div>
   <% end %>
 
+
+  <div class="field">
+    <%= f.label :odo, "Odo, km" %>
+    <%= f.number_field :odo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :odo_delta, "Odo delta, km" %>
+    <%= f.number_field :odo_delta %>
+  </div>
+
+  <div class="field">
+    <%= f.label :refueling, "Refueling, l" %>
+    <%= f.number_field :refueling %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price_fuel, "Price fuel, uan" %>
+    <%= f.number_field :price_fuel %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fuel_station, "Fual station" %>
+    <%= f.text_field :fuel_station %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fuel_type, "Mark of fuel" %>
+    <%= f.text_field :fuel_type %>
+  </div>
+
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Add fuel data"%>
   </div>
 <% end %>
