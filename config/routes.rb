@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :fuel_stata
+  resource :fuel_stata
   resources :bikes
 
   
