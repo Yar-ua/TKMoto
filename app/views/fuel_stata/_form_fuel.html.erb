@@ -1,6 +1,34 @@
 <%= form_for :fuel_stata, url: bike_fuel_stata_path do |f| %>
 
-  
+    <div class="field">
+      <%= f.label :odo, 'odometer value, km ' %>
+      <%= f.number_field :odo %>
+    </div>
+
+    <div class="field">
+      <%= f.label :odo_delta, 'distance traveled, km ' %>
+      <%= f.number_field :odo_delta %>
+    </div>
+
+    <div class="field">
+      <%= f.label :refueling, 'amound of fuel, l ' %>
+      <%= f.number_field :refueling %>
+    </div>
+
+    <div class="field">
+      <%= f.label :price_fuel, 'price of fuel, uan ' %>
+      <%= f.number_field :price_fuel %>
+    </div>
+
+    <div class="field">
+      <%= f.label :fuel_station, 'fuel station name ' %>
+      <%= f.text_field :fuel_station %>
+    </div>
+
+    <div class="field">
+      <%= f.label :fuel_type, 'fuel mark ' %>
+      <%= f.text_field :fuel_type %>
+    </div>
 
     <div class="actions">
       <%= f.submit 'Save' %>
