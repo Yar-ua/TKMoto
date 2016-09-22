@@ -7,25 +7,22 @@ class FuelStataController < ApplicationController
 
 
   def create
-    @fuel_stata = FuelStatum.new(fuel_params)
+#    @fuel_stata = FuelStatum.new(fuel_params)
+ #   @fuel_stata.save
 
-    if @fuel_stata.save
-      redirect_to @fuel_stata
-    else
-      render 'new'
     end
-  end
+end
 
 
-  private
+#  private
 
 #  def set_bike
 #    @bike = Bike.find(params[:id])
 #  end
 
-  def fuel_params
-    params.require(:fuelstatum).permit(:odo, :odo_delta, :refueling, :price_fuel, :fuel_station, :fuel_type)
-  end
+#  def fuel_params
+#    params.require(:fuelstatum).permit(:bike_id, :odo, :odo_delta, :refueling, :price_fuel, :fuel_station, :fuel_type)
+#  end
 
 
-end
+  #end
