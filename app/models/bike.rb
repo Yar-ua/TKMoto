@@ -1,3 +1,3 @@
 class Bike < ApplicationRecord
-	has_one :stata_fuel, dependent: :destroy
+	has_many :stata_fuels, dependent: :destroy
 end

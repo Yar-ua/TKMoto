@@ -18,7 +18,7 @@
         <tr>
 
           <td><%= link_to bike.name, bike %><hr/>
-           
+            <%= link_to 'Fuel statistics', new_bike_stata_fuel_path(bike) %>
           </td>
           <td><%= bike.user_id %></td>
           <td><%= bike.year %></td>

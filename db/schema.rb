@@ -22,13 +22,13 @@ ActiveRecord::Schema.define(version: 20160923142649) do
   end
 
   create_table "stata_fuels", force: :cascade do |t|
-    t.integer  "bike_id"
     t.float    "odo"
     t.float    "odo_delta"
     t.float    "refueling"
     t.float    "price_fuel"
     t.string   "fuel_station"
     t.string   "fuel_type"
+    t.integer  "bike_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["bike_id"], name: "index_stata_fuels_on_bike_id"
