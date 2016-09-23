@@ -2,13 +2,11 @@ class BikesController < ApplicationController
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
 
   # GET /bikes
-  # GET /bikes.json
   def index
     @bikes = Bike.all
   end
 
   # GET /bikes/1
-  # GET /bikes/1.json
   def show
   end
 
@@ -19,35 +17,29 @@ class BikesController < ApplicationController
 
   # GET /bikes/1/edit
   def edit
+    # in function set_bike we find hash by command: @bike = Bike.find(params[:id])
   end
 
   # POST /bikes
-  # POST /bikes.json
+
   def create
     @bike = Bike.new(bike_params)
-
-    respond_to do |format|
       if @bike.save
-        format.html { redirect_to bikes_url, notice: 'Bike was successfully created.' }
-        format.json { render :index, status: :created, location: @bike }
+        redirect_to bikes_path
       else
-        format.html { render :new }
-        format.json { render json: @bike.errors, status: :unprocessable_entity }
+        render 'new'
       end
-    end
+
+
+
   end
 
   # PATCH/PUT /bikes/1
-  # PATCH/PUT /bikes/1.json
   def update
-    respond_to do |format|
-      if @bike.update(bike_params)
-        format.html { redirect_to bikes_url, notice: 'Bike was successfully updated.' }
-        format.json { render :index, status: :ok, location: @bike }
-      else
-        format.html { render :edit }
-        format.json { render json: @bike.errors, status: :unprocessable_entity }
-      end
+    if @bike.update(bike_params)
+      redirect_to bikes_path
+    else
+      render 'edit'
     end
   end
 
@@ -55,10 +47,7 @@ class BikesController < ApplicationController
   # DELETE /bikes/1.json
   def destroy
     @bike.destroy
-    respond_to do |format|
-      format.html { redirect_to bikes_url, notice: 'Bike was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to bikes_path
   end
 
   private
