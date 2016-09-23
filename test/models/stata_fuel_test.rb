@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class FuelStatumTest < ActiveSupport::TestCase
+class StataFuelTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

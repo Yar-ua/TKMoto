@@ -1,4 +1,10 @@
-<%= form_for :fuel_stata, url: bike_fuel_stata_path do |f| %>
+<h2> Fuel statistics page </h2>
+<p id="notice"><%= notice %></p>
+
+
+
+
+<%= form_for :stata_fuel, url: bike_stata_fuels_path do |f| %>
 
     <div class="field">
       <%= f.label :odo, 'odometer value, km ' %>

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class FuelStataControllerTest < ActionDispatch::IntegrationTest
+class StataFuelsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

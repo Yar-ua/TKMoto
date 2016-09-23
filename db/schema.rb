@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160921121433) do
+ActiveRecord::Schema.define(version: 20160923142649) do
 
   create_table "bikes", force: :cascade do |t|
     t.string   "name"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20160921121433) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "fuel_stata", force: :cascade do |t|
+  create_table "stata_fuels", force: :cascade do |t|
     t.integer  "bike_id"
     t.float    "odo"
     t.float    "odo_delta"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20160921121433) do
     t.string   "fuel_type"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.index ["bike_id"], name: "index_fuel_stata_on_bike_id"
+    t.index ["bike_id"], name: "index_stata_fuels_on_bike_id"
   end
 
 end
