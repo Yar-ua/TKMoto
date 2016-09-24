@@ -1,0 +1,30 @@
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Odometr, km</th>
+        <th>Odometr delta, km</th>
+        <th>Refueling, l</th>
+        <th>Price fuel, uan</th>
+        <th>Fuel station</th>
+        <th>Fuel mark</th>
+        <th>Controls</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @view_fuel_stata.each do |fuel_stata| %>
+        <tr>
+          <td><%= fuel_stata.odo %></td>
+          <td><%= fuel_stata.odo_delta %></td>
+          <td><%= fuel_stata.refueling %></td>
+          <td><%= fuel_stata.price_fuel %></td>
+          <td><%= fuel_stata.fuel_station %></td>
+          <td><%= fuel_stata.fuel_type %></td>
+          <td>
+            Edit link<br/>          
+            Delete link
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

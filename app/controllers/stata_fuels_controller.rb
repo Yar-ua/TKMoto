@@ -7,6 +7,7 @@ class StataFuelsController < ApplicationController
 
   def new
   	@stata_fuel = StataFuel.new
+    @view_fuel_stata = StataFuel.where("bike_id = ?", params[:bike_id])
   end
 
   def create
@@ -14,7 +15,8 @@ class StataFuelsController < ApplicationController
   	@bike = Bike.find(params[:bike_id])
     @bike.stata_fuels.create(fuel_params)
 
- 		render 'create'
+ 		redirect_to new_bike_stata_fuel_path
+    #render 'create'
   	
   end
 
