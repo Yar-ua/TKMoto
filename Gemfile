@@ -53,4 +53,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'bootstrap-sass'
-gem 'web-console'  # переношу гем из development в общий список для исключения ошибок при деплоее на heroku
+gem 'web-console', group: :development  # переношу гем из development в общий список для исключения ошибок при деплоее на heroku
