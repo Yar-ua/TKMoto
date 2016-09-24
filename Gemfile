@@ -38,7 +38,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console'
+  # gem 'web-console'
 end
 
 group :production do
@@ -53,3 +53,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'bootstrap-sass'
+gem 'web-console'  # переношу гем из development в общий список для исключения ошибок при деплоее на heroku
