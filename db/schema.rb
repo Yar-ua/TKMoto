@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20160923142649) do
 
   create_table "bikes", force: :cascade do |t|
     t.string   "name"
-    t.string   "user_name"
+    t.integer  "user_id"
     t.integer  "year"
     t.string   "color"
     t.datetime "created_at", null: false
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20160923142649) do
     t.float    "price_fuel"
     t.string   "fuel_station"
     t.string   "fuel_type"
-    t.string   "notes"
     t.integer  "bike_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false

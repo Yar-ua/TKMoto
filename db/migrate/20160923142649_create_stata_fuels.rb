@@ -8,8 +8,7 @@ class CreateStataFuels < ActiveRecord::Migration[5.0]
       t.float	        :price_fuel		      # стоимость заправленого топлива, грн
       t.string	      :fuel_station	      # заправка
       t.string	      :fuel_type		      # марка бензина
-      t.string        :notes              # примечания
-      t.references    :bike, foreign_key: true  # взаимосвязь с id мотоцикла
+      t.references    :bike #, foreign_key: true
 
       t.timestamps
     end
