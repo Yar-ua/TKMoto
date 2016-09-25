@@ -21,7 +21,7 @@ class StataFuelsController < ApplicationController
 
 
   def show
-    @stata_fuel = Statafuel.find(params[:id])
+    @stata_fuel = StataFuel.find(params[:id])
   end
 
 
