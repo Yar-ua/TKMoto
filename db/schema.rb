@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20160923142649) do
 
   create_table "bikes", force: :cascade do |t|
     t.string   "name"
-    t.integer  "user_name"
+    t.string   "user_name"
     t.integer  "year"
     t.string   "color"
     t.datetime "created_at", null: false
@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(version: 20160923142649) do
   end
 
   create_table "stata_fuels", force: :cascade do |t|
-    t.float    "odo"
-    t.float    "odo_delta"
-    t.float    "refueling"
-    t.float    "price_fuel"
+    t.decimal  "odo"
+    t.decimal  "odo_delta"
+    t.decimal  "refueling"
+    t.decimal  "price_fuel"
     t.string   "fuel_station"
     t.string   "fuel_type"
     t.integer  "bike_id"
