@@ -1,5 +1,5 @@
 class StataFuelsController < ApplicationController
-  before_action :set_stata_fuels
+#  before_action :set_stata_fuel, only: [ :destroy ]
 
   def index
 
@@ -25,11 +25,18 @@ class StataFuelsController < ApplicationController
   end
 
 
+  def destroy
+    @stata_fuel = StataFuel.find(params[:id])
+    @stata_fuel.destroy
+    redirect_to new_bike_stata_fuel_path
+  end
+
+
   private
 
-    def set_stata_fuels
-      @stata_fuels = StataFuel.all
-    end
+#    def set_stata_fuel
+#      @stata_fuel = StataFuel.find(params[:id])
+#    end
 
 
     def fuel_params

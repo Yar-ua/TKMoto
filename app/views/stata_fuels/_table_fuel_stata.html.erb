@@ -23,7 +23,7 @@
           <td>
             <%= link_to 'Show', bike_stata_fuel_path(id: fuel_stata) %><br/>
             Edit link<br/>          
-            Delete link
+            <%= link_to 'Delete', bike_stata_fuel_path(id: fuel_stata), method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
         </tr>
       <% end %>
