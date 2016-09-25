@@ -14,13 +14,14 @@
     <tbody>
       <% @view_fuel_stata.each do |fuel_stata| %>
         <tr>
-          <td><%= fuel_stata.odo %></td>
+          <td><%= fuel_stata.id %></td>
           <td><%= fuel_stata.odo_delta %></td>
           <td><%= fuel_stata.refueling %></td>
           <td><%= fuel_stata.price_fuel %></td>
           <td><%= fuel_stata.fuel_station %></td>
           <td><%= fuel_stata.fuel_type %></td>
           <td>
+            <%= link_to 'Show', bike_stata_fuel_path(id: fuel_stata) %><br/>
             Edit link<br/>          
             Delete link
           </td>
