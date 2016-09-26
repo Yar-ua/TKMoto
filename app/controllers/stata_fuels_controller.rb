@@ -2,14 +2,15 @@ class StataFuelsController < ApplicationController
   before_action :set_stata_fuel, only: [ :show, :edit, :update, :destroy ]
   before_action :set_view_stata_fuel, only: [ :new ]
 
+
   def index
 
   end
 
 
   def new
-  	@stata_fuel = StataFuel.new
-    @view_fuel_stata = StataFuel.where("bike_id = ?", params[:bike_id])
+  	# @stata_fuel = StataFuel.new
+    # @view_fuel_stata = StataFuel.where("bike_id = ?", params[:bike_id])
   end
 
 
@@ -21,24 +22,22 @@ class StataFuelsController < ApplicationController
 
 
   def show
-    #@stata_fuel = StataFuel.find(params[:id])
+ 
   end
 
 
   def edit
-    #@stata_fuel = StataFuel.find(params[:id])
+    
   end
 
 
   def update
-    #@stata_fuel = StataFuel.find(params[:id])
     @stata_fuel.update(fuel_params)
     redirect_to new_bike_stata_fuel_path
   end
 
 
   def destroy
-    #@stata_fuel = StataFuel.find(params[:id])
     @stata_fuel.destroy
     redirect_to new_bike_stata_fuel_path
   end
@@ -50,15 +49,18 @@ class StataFuelsController < ApplicationController
       @stata_fuel = StataFuel.find(params[:id])
     end
 
+
     def set_view_stata_fuel
       @view_fuel_stata = StataFuel.where("bike_id = ?", params[:bike_id])
     end
 
 
     def fuel_params
-      params.require(:stata_fuel).permit(:bike_id, :odo, :odo_delta, :refueling, :price_fuel, :fuel_station, :fuel_type)
+      params.require(:stata_fuel).permit(
+                      :bike_id, :odo, :odo_delta, :refueling, 
+                      :price_fuel, :fuel_station, :fuel_type
+                    )
     end
-
   
 
 end
