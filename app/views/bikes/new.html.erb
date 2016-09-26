@@ -1,5 +1,21 @@
 <h1>New Bike</h1>
 
+  <% if @bike.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  	  <span class="sr-only">Error:</span>
+  	      
+  	    <h2><%= pluralize(@bike.errors.count, "error") %> prohibited this article from being saved:</h2>
+            
+        <ul>
+          <% @bike.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+    </div>
+  <% end %>
+
 <%= render 'form', bike: @bike %>
 
 <%= link_to 'Back', bikes_path %>
+<br/>
