@@ -16,8 +16,11 @@ class StataFuelsController < ApplicationController
 
   def create
   	@bike = Bike.find(params[:bike_id])
-    @bike.stata_fuels.create(fuel_params)
- 		redirect_to new_bike_stata_fuel_path
+    if @bike.stata_fuels.create(fuel_params)
+      redirect_to new_bike_stata_fuel_path
+    else
+      render 'new'
+    end
  	end
 
 
