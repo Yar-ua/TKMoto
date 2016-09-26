@@ -5,7 +5,7 @@
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
   	  <span class="sr-only">Error:</span>
   	      
-  	    <h2><%= pluralize(@bike.errors.count, "error") %> prohibited this article from being saved:</h2>
+  	    <h2>Количество ошибок проверки введенных данных: <%= @bike.errors.count %></h2>
             
         <ul>
           <% @bike.errors.full_messages.each do |msg| %>
