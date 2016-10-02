@@ -54,7 +54,7 @@ class StataFuelsController < ApplicationController
 
 
     def set_view_stata_fuel
-      @view_fuel_stata = StataFuel.where("bike_id = ?", params[:bike_id])
+      @view_stata_fuel = StataFuel.where("bike_id = ?", params[:bike_id])
     end
 
 
