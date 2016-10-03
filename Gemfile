@@ -54,3 +54,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'bootstrap-sass'
+# => гем для отображения ошибок валидации во вьюхе, смотри http://v32.rusrails.ru/active-record-validations-and-callbacks/displaying-validation-errors-in-the-view 
+gem 'dynamic_form'    
