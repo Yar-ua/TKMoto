@@ -9,6 +9,7 @@ class StataFuelsController < ApplicationController
 
 
   def new
+      @bike = Bike.find(params[:bike_id])
       @stata_fuel = StataFuel.new
   end
 

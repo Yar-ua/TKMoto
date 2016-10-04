@@ -1,6 +1,8 @@
 <h2> Fuel statistics page </h2>
 <p id="notice"><%= notice %></p>
 
+  <%= @stata_fuel.valid? %>
+
   <%= render 'form_fuel_create', stata_fuel: @stata_fuel %>
 
   <%= link_to 'Back', bikes_path %>
