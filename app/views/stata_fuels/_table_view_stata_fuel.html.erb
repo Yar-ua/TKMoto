@@ -21,8 +21,8 @@
           <td><%= fuel_stata.fuel_station %></td>
           <td><%= fuel_stata.fuel_type %></td>
           <td>
-            <%= link_to 'Edit', edit_bike_stata_fuel_path(id: fuel_stata) %><br/>
-            <%= link_to 'Delete', bike_stata_fuel_path(id: fuel_stata), 
+            <%= link_to 'Edit', edit_bike_stata_fuel_path(id: fuel_stata.id) %><br/>
+            <%= link_to 'Delete', bike_stata_fuel_path(id: fuel_stata.id), 
                                   method: :delete, 
                                   data: { confirm: 'Are you sure?' } %>
           </td>
