@@ -1,5 +1,6 @@
 class Bike < ApplicationRecord
-	has_many :stata_fuels, dependent: :destroy
+	has_many :stata_fuels, dependent: :destroy, validate: true
+	validates_associated :stata_fuels
 
 	validates 	:name, presence: { message: "введите модель байка" }
 	validates	:name, length: { maximum: 30, message: "название модели - максимум 30 символов " }

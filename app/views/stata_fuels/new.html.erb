@@ -2,7 +2,12 @@
 <p id="notice"><%= notice %></p>
 
 
-  <%= @bike.stata_fuel.errors %>
+-----------------------<br/>
+<% if @stata_err.errors.any? %><br/>
+	<%= @stata_err.inspect %><br/>
+	+++<%= @stata_err.errors.messages %>
+<% end %>
+
 
   <%= render 'form_fuel_create', stata_fuel: @stata_fuel %>
 
