@@ -1,26 +1,37 @@
 class StataFuelsController < ApplicationController
-  before_action :set_stata_fuel, only: [ :show, :edit, :update, :destroy ]
-  before_action :set_view_stata_fuel, only: [ :new ]
+   #before_action :set_stata_fuel, only: [ :show, :edit, :update, :destroy ]
+   before_action :set_view_stata_fuel
 
 
-  def index
+  #def index
 
-  end
+  #end
 
-
+  
   def new
-  	# @stata_fuel = StataFuel.new
-    # @view_fuel_stata = StataFuel.where("bike_id = ?", params[:bike_id])
-  end
+      @bike = Bike.find(params[:bike_id])
+      @stata_fuel = StataFuel.new
+      @stata_err = StataFuel.new
+    end
 
 
   def create
+
   	@bike = Bike.find(params[:bike_id])
-    if @bike.stata_fuels.create(fuel_params)
+    @stata_err = @bike.stata_fuels.create(fuel_params)
+    if @stata_err.valid?
       redirect_to new_bike_stata_fuel_path
     else
       render 'new'
     end
+
+  #  if @bike.stata_fuels.create(fuel_params)
+  #    redirect_to new_bike_stata_fuel_path
+  #  else
+  #    @bike.valid?
+  #    @bike.errors
+  #    redirect_to new_bike_stata_fuel_path
+  #  end
  	end
 
 
@@ -30,17 +41,19 @@ class StataFuelsController < ApplicationController
 
 
   def edit
-    
+    @stata_fuel = StataFuel.find(params[:id])
   end
 
 
   def update
+    @stata_fuel = StataFuel.find(params[:id])
     @stata_fuel.update(fuel_params)
     redirect_to new_bike_stata_fuel_path
   end
 
 
   def destroy
+    @stata_fuel = StataFuel.find(params[:id])
     @stata_fuel.destroy
     redirect_to new_bike_stata_fuel_path
   end
@@ -48,9 +61,9 @@ class StataFuelsController < ApplicationController
 
   private
 
-    def set_stata_fuel
-      @stata_fuel = StataFuel.find(params[:id])
-    end
+    #def set_stata_fuel
+    #  @stata_fuel = StataFuel.find(params[:id])
+    #end
 
 
     def set_view_stata_fuel

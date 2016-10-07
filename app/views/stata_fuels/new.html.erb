@@ -1,6 +1,7 @@
 <h2> Fuel statistics page </h2>
 <p id="notice"><%= notice %></p>
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <%= @stata_fuel.bike.errors.count %>
@@ -12,6 +13,16 @@
 
 
 >>>>>>> Stashed changes
+=======
+
+-----------------------<br/>
+<% if @stata_err.errors.any? %><br/>
+	<%= @stata_err.inspect %><br/>
+	+++<%= @stata_err.errors.messages %>
+<% end %>
+
+
+>>>>>>> origin/new_controller
   <%= render 'form_fuel_create', stata_fuel: @stata_fuel %>
 
   <%= link_to 'Back', bikes_path %>
@@ -19,4 +30,4 @@
 <br/>
 <hr/>
    
-   <%= render 'table_fuel_stata' %>
+   <%= render 'table_view_stata_fuel' %>
