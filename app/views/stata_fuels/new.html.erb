@@ -1,6 +1,17 @@
 <h2> Fuel statistics page </h2>
 <p id="notice"><%= notice %></p>
 
+<<<<<<< Updated upstream
+=======
+<%= @stata_fuel.bike.errors.count %>
+	<h2>azzazazazaaa</h2>
+          <% @stata_fuel.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+
+
+
+>>>>>>> Stashed changes
   <%= render 'form_fuel_create', stata_fuel: @stata_fuel %>
 
   <%= link_to 'Back', bikes_path %>
