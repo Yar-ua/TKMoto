@@ -1,10 +1,12 @@
 <h2> Fuel statistics page </h2>
 
+<%= @view_stata_fuel.inspect %>
+
   <% if @stata_err.errors.any? %>
     <div id="error_explanation" class="alert alert-danger" role="alert">
   	    <h2>
           <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
-           При вводе данных возникло <%= @stata_err.errors.count %> ошибки
+           При вводе данных возникло ошибок: <%= @stata_err.errors.count %>
         </h2>
             
         <ul>

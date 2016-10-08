@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   #resources :stata_fuels
   resources :bikes do
-  	resources :stata_fuels #, only: [ :new, :create, :edit, :update]
+  	resources :stata_fuels
   end
 
   
