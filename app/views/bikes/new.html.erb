@@ -9,8 +9,8 @@
         </h2>
             
         <ul>
-          <% @bike.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
+          <% @bike.errors.each do |attribute, error| %>
+            <li><%= error %></li>
           <% end %>
         </ul>
     </div>
