@@ -21,10 +21,12 @@
           <td><%= fuel_stata.fuel_station %></td>
           <td><%= fuel_stata.fuel_type %></td>
           <td>
-            <%= link_to 'Редактировать', edit_bike_stata_fuel_path(id: fuel_stata.id) %><br/>
-            <%= link_to 'Удалить', bike_stata_fuel_path(id: fuel_stata.id), 
+            <div class="btn-group-vertical" role="group" aria-label="...">
+              <%= link_to 'Редактировать', edit_bike_stata_fuel_path(id: fuel_stata.id), class: "btn btn-default btn-sm" %>
+              <%= link_to 'Удалить', bike_stata_fuel_path(id: fuel_stata.id), class: "btn btn-danger btn-sm", 
                                   method: :delete, 
                                   data: { confirm: 'Уверен что хочешь удалить запись?' } %>
+            </div>
           </td>
         </tr>
       <% end %>

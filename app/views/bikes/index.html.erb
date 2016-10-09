@@ -18,7 +18,7 @@
         <tr>
 
           <td><%= link_to bike.name, bike %><hr/>
-            <%= link_to 'Топливная статистика', new_bike_stata_fuel_path(bike) %>
+            <%= link_to 'Топливная статистика', new_bike_stata_fuel_path(bike), :class => "btn btn-default btn-sm", method: :get %>
           </td>
           <td><%= bike.user_name %></td>
           <td><%= bike.year %></td>
@@ -28,9 +28,11 @@
           </td>
 
           <td>
-            <%= link_to 'Показать', bike %><br/>
-            <%= link_to 'Редактировать', edit_bike_path(bike) %><br/>
-            <%= link_to 'Удалить', bike, method: :delete, data: { confirm: 'Уверен что хочешь удалить байк и всю статистику?' } %>
+          <div class="btn-group btn-group-vertical" role="group" aria-label="...">
+            <%= link_to 'Показать', bike_path(bike), class: "btn btn-default btn-sm" %>
+            <%= link_to 'Редактировать', edit_bike_path(bike), class: "btn btn-default btn-sm" %>
+            <%= link_to 'Удалить', bike, class: "btn btn-danger btn-sm", method: :delete, data: { confirm: 'Уверен что хочешь удалить байк и всю статистику?' } %>
+          </div>
           </td>
         
         </tr>
@@ -40,4 +42,4 @@
 
 <hr>
 
-    <%= link_to 'Создать новый байк', new_bike_path %>
+    <%= link_to 'Создать новый байк', new_bike_path, class: "btn btn-success btn-sm" %>

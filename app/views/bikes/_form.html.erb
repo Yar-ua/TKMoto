@@ -37,7 +37,8 @@
   </div>
 
   <div class="actions">
-    <%= f.submit 'Сохранить' %>
+    <%= f.submit 'Сохранить', class: "btn btn-success btn-sm" %> | 
+    <%= link_to 'Назад', bikes_path, class: "btn btn-default btn-sm" %>
   </div>
 
 <% end %>
