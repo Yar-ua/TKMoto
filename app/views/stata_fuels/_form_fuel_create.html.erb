@@ -1,38 +1,62 @@
 <%= form_for :stata_fuel, url: bike_stata_fuels_path, method: :post do |f| %>
 
-
-    <div class="field">
-      <%= f.label :odo, 'Показания одометра, км ' %>
-      <%= f.text_field :odo %>
+    <div class="row">
+      <div class="col-md-3">
+        <%= f.label :odo, 'Показания одометра, км ' %>
+      </div>
+      <div class="col-md-3">
+        <%= f.text_field :odo %>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label :odo_delta, 'Пробег, км ' %>
-      <%= f.text_field :odo_delta %>
+    <div class="row">
+      <div class="col-md-3">
+        <%= f.label :odo_delta, 'Пробег, км ' %>
+      </div>
+      <div class="col-md-3">
+        <%= f.text_field :odo_delta %>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label :refueling, 'Объем заправленного топлива, л ' %>
-      <%= f.text_field :refueling %>
+    <div class="row">
+      <div class="col-md-3">
+        <%= f.label :refueling, 'Объем заправленного топлива, л ' %>
+      </div>
+      <div class="col-md-3">
+        <%= f.text_field :refueling %>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label :price_fuel, 'Стоимость заправленного топлива, грн ' %>
-      <%= f.text_field :price_fuel %>
+    <div class="row">
+      <div class="col-md-3">
+        <%= f.label :price_fuel, 'Стоимость заправленного топлива, грн ' %>
+      </div>
+      <div class="col-md-3">
+        <%= f.text_field :price_fuel %>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label :fuel_station, 'Название заправки ' %>
-      <%= f.text_field :fuel_station %>
+    <div class="row">
+      <div class="col-md-3">
+        <%= f.label :fuel_station, 'Название заправки ' %>
+      </div>
+      <div class="col-md-3">
+        <%= f.text_field :fuel_station %>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label :fuel_type, 'Марка бензина ' %>
-      <%= f.text_field :fuel_type %>
+    <div class="row">
+      <div class="col-md-3">
+        <%= f.label :fuel_type, 'Марка бензина ' %>
+      </div>
+      <div class="col-md-3">
+        <%= f.text_field :fuel_type %>
+      </div>
     </div>
 
     <div class="actions">
       <%= f.submit 'Сохранить' %>
     </div>
+
 
 <% end %>

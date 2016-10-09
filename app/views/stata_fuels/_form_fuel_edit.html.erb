@@ -1,6 +1,6 @@
 <%= form_for :stata_fuel, url: bike_stata_fuel_path, method: :put do |f| %>
 
-
+  <div class="fuel-form">
     <div class="field">
       <%= f.label :odo, 'Показания одометра, км ' %>
       <%= f.text_field :odo %>
@@ -34,5 +34,6 @@
     <div class="actions">
       <%= f.submit 'Сохранить' %>
     </div>
+  </div>
 
 <% end %>
