@@ -1,13 +1,13 @@
 <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Odometr, km</th>
-        <th>Odometr delta, km</th>
-        <th>Refueling, l</th>
-        <th>Price fuel, uan</th>
-        <th>Fuel station</th>
-        <th>Fuel mark</th>
-        <th>Controls</th>
+        <th>Данные одометра, км</th>
+        <th>Пробег, км</th>
+        <th>Заправлено, л</th>
+        <th>Стоимость топлива, грн</th>
+        <th>Бензозаправка</th>
+        <th>Марка бенза</th>
+        <th>Управление</th>
       </tr>
     </thead>
 
@@ -21,10 +21,10 @@
           <td><%= fuel_stata.fuel_station %></td>
           <td><%= fuel_stata.fuel_type %></td>
           <td>
-            <%= link_to 'Edit', edit_bike_stata_fuel_path(id: fuel_stata.id) %><br/>
-            <%= link_to 'Delete', bike_stata_fuel_path(id: fuel_stata.id), 
+            <%= link_to 'Редактировать', edit_bike_stata_fuel_path(id: fuel_stata.id) %><br/>
+            <%= link_to 'Удалить', bike_stata_fuel_path(id: fuel_stata.id), 
                                   method: :delete, 
-                                  data: { confirm: 'Are you sure?' } %>
+                                  data: { confirm: 'Уверен что хочешь удалить запись?' } %>
           </td>
         </tr>
       <% end %>

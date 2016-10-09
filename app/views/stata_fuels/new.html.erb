@@ -1,6 +1,4 @@
-<h2> Fuel statistics page </h2>
-
-<%= @view_stata_fuel.inspect %>
+<h2> Топливная статистика байка <%= @bike.name %>, владелец <%= @bike.user_name %> </h2>
 
   <% if @stata_err.errors.any? %>
     <div id="error_explanation" class="alert alert-danger" role="alert">

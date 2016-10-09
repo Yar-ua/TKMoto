@@ -2,37 +2,37 @@
 
 
     <div class="field">
-      <%= f.label :odo, 'odometer value, km ' %>
+      <%= f.label :odo, 'Показания одометра, км ' %>
       <%= f.text_field :odo %>
     </div>
 
     <div class="field">
-      <%= f.label :odo_delta, 'distance traveled, km ' %>
+      <%= f.label :odo_delta, 'Пробег, км ' %>
       <%= f.text_field :odo_delta %>
     </div>
 
     <div class="field">
-      <%= f.label :refueling, 'amound of fuel, l ' %>
+      <%= f.label :refueling, 'Объем заправленного топлива, л ' %>
       <%= f.text_field :refueling %>
     </div>
 
     <div class="field">
-      <%= f.label :price_fuel, 'price of fuel, uan ' %>
+      <%= f.label :price_fuel, 'Стоимость заправленного топлива, грн ' %>
       <%= f.text_field :price_fuel %>
     </div>
 
     <div class="field">
-      <%= f.label :fuel_station, 'fuel station name ' %>
+      <%= f.label :fuel_station, 'Название заправки ' %>
       <%= f.text_field :fuel_station %>
     </div>
 
     <div class="field">
-      <%= f.label :fuel_type, 'fuel mark ' %>
+      <%= f.label :fuel_type, 'Марка бензина ' %>
       <%= f.text_field :fuel_type %>
     </div>
 
     <div class="actions">
-      <%= f.submit 'Save fuel data' %>
+      <%= f.submit 'Сохранить' %>
     </div>
 
 <% end %>
