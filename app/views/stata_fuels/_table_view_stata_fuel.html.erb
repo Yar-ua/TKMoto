@@ -1,4 +1,5 @@
 <table class="table table-bordered">
+  <% hash_graph = Hash.new("") %>
     <thead>
       <tr>
         <th>Одометр, км</th>
@@ -26,6 +27,7 @@
           <td><%= fuel_stata.fuel_station %></td>
           <td><%= fuel_stata.fuel_type %></td> 
             <% l_na_100_km = fuel_stata.refueling / (fuel_stata.odo_delta / 100) %> 
+            <% hash_graph[:rashod] << l_na_100_km.to_s %>
           <td><%= l_na_100_km.round(2)  %></td>
             <% l_na_1_km = (fuel_stata.refueling / fuel_stata.odo_delta).round(2) %>
           <td><%= l_na_1_km  %></td>
@@ -47,3 +49,4 @@
       <% end %>
     </tbody>
   </table>
+  <%= hash_graph %>

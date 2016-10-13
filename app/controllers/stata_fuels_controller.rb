@@ -2,7 +2,6 @@ class StataFuelsController < ApplicationController
    before_action :set_view_stata_fuel
    before_action :set_stata_fuel_find, only: [ :edit, :update, :destroy ]
 
-
  
   def new
       @bike = Bike.find(params[:bike_id])
