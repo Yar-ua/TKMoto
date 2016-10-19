@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160923142649) do
+ActiveRecord::Schema.define(version: 20161018210746) do
 
   create_table "bikes", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20160923142649) do
     t.string   "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "graph_fuels", force: :cascade do |t|
+    t.decimal  "number"
+    t.decimal  "l_na_100_km"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "stata_fuels", force: :cascade do |t|

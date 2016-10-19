@@ -57,3 +57,4 @@ gem 'bootstrap-sass'
 # => гем для отображения ошибок валидации во вьюхе, смотри http://v32.rusrails.ru/active-record-validations-and-callbacks/displaying-validation-errors-in-the-view 
 gem 'dynamic_form'  
 gem "chartkick"   # гем для графиков на JS - мод Chartkick
+gem 'mattetti-googlecharts'

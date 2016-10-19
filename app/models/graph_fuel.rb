@@ -1,0 +1,2 @@
+class GraphFuel < ApplicationRecord
+end

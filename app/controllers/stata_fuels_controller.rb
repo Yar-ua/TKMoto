@@ -2,11 +2,12 @@ class StataFuelsController < ApplicationController
    before_action :set_view_stata_fuel
    before_action :set_stata_fuel_find, only: [ :edit, :update, :destroy ]
 
+
  
   def new
       @bike = Bike.find(params[:bike_id])
-      #@stata_fuel = StataFuel.new
       @stata_err = StataFuel.new
+
     end
 
 
@@ -65,6 +66,5 @@ class StataFuelsController < ApplicationController
                       :price_fuel, :fuel_station, :fuel_type
                     )
     end
-  
 
 end
