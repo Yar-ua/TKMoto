@@ -1,2 +1,0 @@
-class GraphFuel < ApplicationRecord
-end

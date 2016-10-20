@@ -1,5 +1,4 @@
-<script src="https://cdn.zingchart.com/zingchart.min.js"></script>
-
+  <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
   
 <h2> Топливная статистика байка <%= @bike.name %>, владелец <%= @bike.user_name %> </h2>
 
@@ -17,40 +16,39 @@
         </ul>
     </div>
   <% end %>
-------
-<% stata_l_na_100_km %>
-<%= @stata_graph %>
-------
-
-<div id="chartDiv"></div>
-  <script>
-    var chartData = {
-      type: "bar",  // Specify your chart type here.
-      title: {
-        text: "My First Chart" // Adds a title to your chart
-      },
-      legend: {}, // Creates an interactive legend
-      series: [  // Insert your series data here.
-          { values: <%= JSON.parse(@json_stata) %> }
-      ]
-    };
-    zingchart.render({ // Render Method[3]
-      id: "chartDiv",
-      data: chartData,
-      height: 400,
-      width: 600
-    });
-  </script>
 
 
-  json:  <%= JSON.parse(@json_stata) %>
+<% get_stata_l_na_100_km %>  
+
+
+  <div id='chartDivRashod'></div>
 
 
   <%= render 'form_fuel_create', stata_fuel: @stata_fuel %>
 <div>
-<br/>
-
-<hr/>
-   
-   <%= render 'table_view_stata_fuel' %>
+  <hr/>
+    <%= render 'table_view_stata_fuel' %>
 </div>
+
+
+
+
+<script>
+    var chartRashod = {
+      type: "bar",  // Specify your chart type here.
+      title: {
+        text: "средний расход, л/100 км" // Adds a title to your chart
+      },
+      legend: {}, // Creates an interactive legend
+      series: [  // Insert your series data here.
+          { values: <%= JSON.parse(@json_stata_l_na_100_km) %> }
+      ]
+    };
+
+    zingchart.render({ // Render Method[3]
+      id: "chartDivRashod",
+      data: chartRashod,
+      height: 400,
+      width: 600
+    });
+</script>
