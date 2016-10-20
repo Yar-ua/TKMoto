@@ -25,16 +25,12 @@
           <td><%= fuel_stata.price_fuel %></td>
           <td><%= fuel_stata.fuel_station %></td>
           <td><%= fuel_stata.fuel_type %></td> 
-            <% l_na_100_km = fuel_stata.refueling / (fuel_stata.odo_delta / 100) %> 
-          <td><%= l_na_100_km.round(2)  %></td>
-            <% l_na_1_km = (fuel_stata.refueling / fuel_stata.odo_delta).round(2) %>
-          <td><%= l_na_1_km  %></td>
-            <% km_na_1_l = (fuel_stata.odo_delta / fuel_stata.refueling).round(2) %>
-          <td><%= km_na_1_l %></td>
-            <% km_na_1_grn = (fuel_stata.odo_delta / fuel_stata.price_fuel).round(2) %>
-          <td><%= km_na_1_grn %></td>
-            <% grn_na_1_km = (fuel_stata.price_fuel / fuel_stata.odo_delta).round(2) %>
-          <td><%= grn_na_1_km %></td>
+
+          <td><%= (fuel_stata.refueling / (fuel_stata.odo_delta / 100)).round(2)  %></td>
+          <td><%= (fuel_stata.refueling / fuel_stata.odo_delta).round(2) %></td>
+          <td><%= (fuel_stata.odo_delta / fuel_stata.refueling).round(2) %></td>
+          <td><%= (fuel_stata.odo_delta / fuel_stata.price_fuel).round(2) %></td>
+          <td><%= (fuel_stata.price_fuel / fuel_stata.odo_delta).round(2) %></td>
           <td>
             <div class="btn-group-vertical" role="group" aria-label="...">
               <%= link_to 'Редактировать', edit_bike_stata_fuel_path(id: fuel_stata.id), class: "btn btn-default btn-sm" %>

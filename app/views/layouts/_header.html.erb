@@ -1,6 +1,5 @@
 <nav class="navbar navbar-default">
 
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -13,24 +12,33 @@
 
     <div class="collapse navbar-collapse navbar-inverse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li <%= "class=active" if current_page?('/home/start') %> ><%= link_to "Home", home_start_path %></li>
-        <li <%= "class=active" if current_page?('/home/about') %>><%= link_to "About", home_about_path %></li>
-        <li <%= "class=active" if current_page?('/bikes') %>><%= link_to "Bikes", bikes_path %></li>
-      </ul>
-      
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li <%= "class=active" if current_page?('/home/start') %> ><%= link_to "Главная", home_start_path %></li>
+        <li <%= "class=active" if current_page?('/home/about') %>><%= link_to "О проекте", home_about_path %></li>
+        <li <%= "class=active" if current_page?('/bikes') %>><%= link_to "Мото Статистика", bikes_path %></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Сравнение<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">по топливу</a></li>
+            <li><a href="#">по ремонту</a></li>
+            <li><a href="#">по пробегу</a></li>
+            <li><a href="#">по местам посещения</a></li>
+            <li><a href="#">вероятные отказы</a></li>
           </ul>
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Ссылка</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Вход/выход<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Log-in</a></li>
+            <li><a href="#">Log-out</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
 </nav>

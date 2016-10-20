@@ -1,4 +1,5 @@
-  <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+  <script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
+
   
 <h2> Топливная статистика байка <%= @bike.name %>, владелец <%= @bike.user_name %> </h2>
 
@@ -32,16 +33,38 @@
 
 
 
-
 <script>
     var chartRashod = {
       type: "bar",  // Specify your chart type here.
+
+      "plot": {
+        "value-box": {
+          "text": "%node-value"
+        }
+      },
       title: {
         text: "средний расход, л/100 км" // Adds a title to your chart
       },
-      legend: {}, // Creates an interactive legend
-      series: [  // Insert your series data here.
-          { values: <%= JSON.parse(@json_stata_l_na_100_km) %> }
+      legend: {
+        "header": {
+          "text": "байк"
+        }
+
+      }, // Creates an interactive legend
+        "type": "bar",
+        "scale-x": {
+        "zooming": true
+        },
+        "scale-y": {
+        "zooming": false
+      },
+      "preview": {
+        "visible": true
+      },
+
+      series: [  
+          { text: <%= @bike.id %>,
+            values: <%= JSON.parse(@json_stata_l_na_100_km) %> }
       ]
     };
 
