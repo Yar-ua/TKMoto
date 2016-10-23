@@ -1,4 +1,6 @@
 class BikesController < ApplicationController
+  http_basic_authenticate_with name: "admin", password: "oligofren", only: :destroy
+
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
 
   # GET /bikes

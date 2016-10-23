@@ -15,6 +15,7 @@
  
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 .field_with_errors input {
 	border-color: red;					/* стиль поля с ошибкой валидации */
@@ -24,6 +25,9 @@
 	border-color: red;					/* красный контур поля с ошибкой валидации */
 }
 
+
+
+/* отступ на странице about */ 
 #about-container {
 	margin: 20px 20px 20px 20px
 }
@@ -31,18 +35,11 @@
 
 /* стиль слайдера */ 
 
-h3{
-    margin: 0;     
-    color: #666;
-    padding-top: 90px;
-    font-size: 52px;
-    font-family: "trebuchet ms", sans-serif;    
-}
 .item{
     background: #333;    
     text-align: center;
-    
-}
+   }
+
 .carousel{
     margin-top: 20px;
 }
