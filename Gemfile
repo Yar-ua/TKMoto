@@ -58,3 +58,4 @@ gem 'bootstrap-sass'
 gem 'dynamic_form'  
 gem "chartkick"   # гем для графиков на JS - мод Chartkick
 gem "font-awesome-rails" #гем для иконок font-awesome
+gem 'devise'  #гем для аутентификации

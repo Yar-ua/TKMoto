@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+  get 'persons/profile'
+
   #resources :stata_fuels
   resources :bikes do
   	resources :stata_fuels
   end
 
-  
+  get 'persons/profile' , as: 'user_root'	#перенаправление для гема devise
 
   root to: 'home#start'
   
