@@ -11,7 +11,7 @@
 
     <div class="row">
       <div class="col-md-3">
-        <%= f.label :odo_delta, 'Пробег, км ' %>
+        <%= f.label :odo_delta, 'Пробег, км * ' %>
       </div>
       <div class="col-md-3">
         <%= f.text_field :odo_delta %>
@@ -20,7 +20,7 @@
 
     <div class="row">
       <div class="col-md-3">
-        <%= f.label :refueling, 'Объем заправленного топлива, л ' %>
+        <%= f.label :refueling, 'Объем заправленного топлива, л * ' %>
       </div>
       <div class="col-md-3">
         <%= f.text_field :refueling %>
@@ -29,7 +29,7 @@
 
     <div class="row">
       <div class="col-md-3">
-        <%= f.label :price_fuel, 'Стоимость заправленного топлива, грн ' %>
+        <%= f.label :price_fuel, 'Стоимость заправл. топлива, грн * ' %>
       </div>
       <div class="col-md-3">
         <%= f.text_field :price_fuel %>
@@ -53,6 +53,8 @@
         <%= f.text_field :fuel_type %>
       </div>
     </div>
+
+    <div>* - поля, обязательные для заполнения</div>
 
     <div class="actions">
       <%= f.submit 'Сохранить', class: "btn btn-success btn-sm" %> |
