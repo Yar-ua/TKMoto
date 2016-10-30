@@ -22,8 +22,7 @@
 <% get_stata_l_na_100_km %>  
 
 
-  <div id='chartDivRashod'>
-  </div>
+  <div id='chartDivRashod'></div>
 
 
   <%= render 'form_fuel_create', stata_fuel: @stata_fuel %>
@@ -33,7 +32,8 @@
 </div>
 
 
-<script type="text/javascript">
+
+<script>
     var chartRashod = {
       type: "bar",  // Specify your chart type here.
 
@@ -63,7 +63,7 @@
       },
 
       series: [  
-          { text: "1",
+          { text: <%= @bike.id %>,
             values: <%= JSON.parse(@json_stata_l_na_100_km) %> }
       ]
     };
@@ -73,5 +73,5 @@
       data: chartRashod,
       height: 400,
       width: 600
-    });    
+    });
 </script>
