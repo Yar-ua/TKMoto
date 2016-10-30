@@ -6,10 +6,8 @@ Rails.application.routes.draw do
   end
 
   root to: 'home#start'
-  
-  get '/' => 'home#start'
-  get 'home/start'
-  get 'home/about'
+  match 'home/start', to: 'home#start', via: [:get]
+  match 'home/about', to: 'home#about', via: [:get]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
