@@ -29,17 +29,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <% if user_signed_in? %>
-            <span id="log-in_username_style">
-              Вы вошли как <%= current_user.username %>
-            </span>
-            <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
-          <% else %>
-            <div class="btn-group" role="group" aria-label="...">
-            <%= link_to 'Войти', new_user_session_path, class: "btn btn-success btn-sm" %> 
-            <%= link_to 'Зарегистрироваться', new_user_registration_path, class: "btn btn-primary btn-sm" %>
-            </div>
-          <% end %>
+          <a href="#">log in/out</a>
         </li>
 
       </ul>
