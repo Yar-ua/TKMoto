@@ -28,10 +28,11 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a href="#">log in/out</a>
-        </li>
-
+        <div class="btn-group" role="group" aria-label="...">
+          <li>
+            <%= link_to "Sign up now", signup_path, class: "btn btn-small btn-primary" %>
+          </li>
+        </div>
       </ul>
     </div>
 </nav>
