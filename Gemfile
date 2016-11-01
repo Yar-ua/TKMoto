@@ -56,5 +56,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
 # => гем для отображения ошибок валидации во вьюхе, смотри http://v32.rusrails.ru/active-record-validations-and-callbacks/displaying-validation-errors-in-the-view 
 gem 'dynamic_form'  
-gem "chartkick"   # гем для графиков на JS - мод Chartkick
-gem "font-awesome-rails" #гем для иконок font-awesome
+# гем для графиков на JS - мод Chartkick
+gem "chartkick"   
+#гем для иконок font-awesome
+gem "font-awesome-rails"
+#гем для шифрования пароля
+gem 'bcrypt-ruby'
