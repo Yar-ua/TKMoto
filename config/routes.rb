@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :users
+
   resources :bikes do
   	resources :stata_fuels
   end
 
   root to: 'home#start'
-
-  get 'users/new'
 
   match '/signup', 		to: 'users#new',	via: [:get]
   match 'home/start', 	to: 'home#start', 	via: [:get]
