@@ -1,3 +1,65 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
-<hr/>
+<h1>Sign up</h1>
+
+  <% if @user.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger" role="alert">
+  	    <h3>
+          <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+           При вводе данных возникло ошибок: <%= @user.errors.count %>
+        </h3>
+            </div>
+        <ul>
+          <% @user.errors.each do |attribute, error| %>
+            <li color="red"><%= error %></li>
+          <% end %>
+        </ul>
+  <% end %>
+
+
+<div class="row>" id="signup">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+    
+      <div class="row">
+        <div class="col-md-2">
+          <%= f.label :name %>
+        </div>
+        <div class="col-md-2">
+          <%= f.text_field :name %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <%= f.label :email %>
+        </div>
+        <div class="col-md-2">
+          <%= f.text_field :email %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <%= f.label :password %>
+        </div>
+        <div class="col-md-2">
+          <%= f.password_field :password %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <%= f.label :password_confirmation, "Confirmation" %>
+        </div>
+        <div class="col-md-2">
+          <%= f.password_field :password_confirmation %>
+        </div>
+      </div>
+
+      <div class="action">
+        <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+      </div>
+
+    <% end %>
+
+  </div>
+</div>
