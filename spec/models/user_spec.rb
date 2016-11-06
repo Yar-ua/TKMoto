@@ -69,7 +69,7 @@ describe User do
 
 
   describe "email address with mixed case" do
-    let(:mixed_case_email) { "Foo@ExAMPle.CoM" }
+    let(:mixed_case_email) { "LanCe@vANce.CoM" }
 
     it "should be saved as all lower-case" do
       @user.email = mixed_case_email
@@ -107,9 +107,9 @@ describe User do
     before { @user.save }
     let(:found_user) { User.find_by(email: @user.email) }
 
-#    describe "with valid password" do
-#      it { should eq found_user.authenticate(@user.password) }
-#    end
+    describe "with valid password" do
+      it { should eq found_user.authenticate(@user.password) }
+    end
 
     describe "with invalid password" do
       let(:user_for_invalid_password) { found_user.authenticate("invalid") }
@@ -123,7 +123,7 @@ describe User do
 
   describe "remember token" do
     before{ @user.save }
-    its(:remember_token) { should_not be_blank }  #its eq to: it { expect(@user.remember_token).not_to be_blank }
+    it { expect(@user.remember_token).not_to be_blank }   # аналог its(:remember_token) { should_not be_blank }
   end
 
 end
