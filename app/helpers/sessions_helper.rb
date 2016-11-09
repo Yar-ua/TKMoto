@@ -32,4 +32,18 @@ module SessionsHelper
     self.current_user = nil
   end
 
+
+  def redirect_back_or(default)
+    redirect_to(session[:return_to] || default)
+    session.delete(:return_to)
+  end
+
+
+  def store_location
+    # поместить запрашиваемый url в переменную session под ключом :return_to
+    # но только для get запроса (if request.get?)
+    session[:return_to] = request.url if request.get?
+  end
+
+
 end
