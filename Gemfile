@@ -63,3 +63,8 @@ gem "chartkick"
 gem "font-awesome-rails"
 #гем для шифрования пароля
 gem 'bcrypt-ruby'
+# гем для автодобавления полу-реалистичных пользователей
+gem 'faker'
+# гем пагинации - разбиении списка юзеров на страницы
+gem 'will_paginate'
+gem 'bootstrap-will_paginate' # чтобы бутстрап работал с пагинацией 
