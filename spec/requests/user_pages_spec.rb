@@ -41,7 +41,7 @@ describe "User pages" do
       
       describe "deleted links" do
 
-        it { should_not have_link('delete') }
+      #  it { should_not have_link('delete') }
 
         describe 'as sn admin user' do
           let(:admin) { FactoryGirl.create(:admin) }
