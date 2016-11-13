@@ -18,13 +18,20 @@
   <% end %>
 
 
-<% get_stata_l_na_100_km %>  
+<% get_stata_l_na_100_km %>
 
-<%= render  'fuel_chart', locals: @json_stata_l_na_100_km %>
+<div class="row">
+
+  <div class="col-md-6">
+    <%= render 'form_fuel_create', stata_fuel: @stata_fuel %>
+  </div>
 
 
+  <div class="col-md-6" align="center">
+    <%= render  'fuel_chart', locals: @json_stata_l_na_100_km %>
+  </div>
 
-  <%= render 'form_fuel_create', stata_fuel: @stata_fuel %>
+</div>
 <div>
   <hr/>
     <%= render 'table_view_stata_fuel' %>
