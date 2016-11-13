@@ -4,6 +4,13 @@ describe "User pages" do
 
   subject { page }
 
+#   describe 'index' do                   старые тесты без кучи юзеров для пагинации
+#    before do
+#      sign_in FactoryGirl.create(:user)
+#      FactoryGirl.create(:user, name: "Bob", email: "bob@example.com")
+#      FactoryGirl.create(:user, name: "Ben", email: "ben@example.com")
+#      visit users_path
+#    end
 
     describe 'index' do
       let(:user) { FactoryGirl.create(:user) }
@@ -23,17 +30,41 @@ describe "User pages" do
 
         it { should have_selector('div.pagination') }
       end
-    end
+    
 
-
-    it 'should list each user' do
-      User.all.each do |user|
-        expect(page).to have_selector("li", text: user.name)
+      it 'should list each user' do
+        User.all.each do |user|
+          expect(page).to have_selector("li", text: user.name)
+        end
       end
+
+      
+      describe "deleted links" do
+
+        it { should_not have_link('delete') }
+
+        describe 'as sn admin user' do
+          let(:admin) { FactoryGirl.create(:admin) }
+          before do
+            sign_in admin
+            visit users_path
+          end
+
+          it { should have_link('delete', href: user_path(User.first)) }
+          it  "should be able to delete another user" do
+            expect do
+              click_link('delete', match: :first)
+            end.to change(User, :count).by(-1)
+          end
+        end
+      end
+
+
+
     end
+
+
   
-
-
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
     before { visit user_path(user) }
