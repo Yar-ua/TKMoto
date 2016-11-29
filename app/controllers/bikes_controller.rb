@@ -22,8 +22,8 @@ class BikesController < ApplicationController
     # in function set_bike we find hash by command: @bike = Bike.find(params[:id])
   end
 
-  # POST /bikes
 
+  # POST /bikes
   def create
     @bike = Bike.new(bike_params)
       if @bike.save
@@ -31,10 +31,8 @@ class BikesController < ApplicationController
       else
         render 'new'
       end
-
-
-
   end
+
 
   # PATCH/PUT /bikes/1
   def update

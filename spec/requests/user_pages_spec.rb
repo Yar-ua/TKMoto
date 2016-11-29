@@ -20,7 +20,7 @@ describe "User pages" do
       end
     
 
-      it { should have_content 'All users' }
+      it { should have_content 'Все пользователи' }
 
 
       describe "pagination" do
@@ -76,7 +76,7 @@ describe "User pages" do
   describe "signup page" do
     before { visit signup_path }
 
-    it { should have_content('Sign up') }
+    it { should have_content('Регистрация') }
   end
 
 
@@ -84,7 +84,7 @@ describe "User pages" do
 
     before { visit signup_path }
 
-    let(:submit) { "Create my account" }
+    let(:submit) { "Создать аккаунт" }
 
     describe "with invalid information" do
 
@@ -103,14 +103,14 @@ describe "User pages" do
 
     describe "with valid information" do
       before do
-        fill_in "Name",         with: "Lance Vance"
-        fill_in "Email",        with: "lance@vance.com"
-        fill_in "Password",     with: "foobar"
-        fill_in "Confirmation", with: "foobar"
+        fill_in "Логин",                with: "Lance Vance"
+        fill_in "Ваш email",            with: "lance@vance.com"
+        fill_in "Пароль",               with: "foobar"
+        fill_in "Подтверждение пароля", with: "foobar"
       end
 
       it "should create a user" do
-        expect { click_button submit }.to change(User, :count).by(1)
+        expect { click_button "Создать аккаунт" }.to change(User, :count).by(1)
       end
 
       describe "after saving the user" do
@@ -139,12 +139,12 @@ describe "User pages" do
     end      
 
     describe "page" do
-      it { should have_content("Update your profile") }
-      it { should have_link('change', href: 'http://gravatar.com/emails') }
+      it { should have_content("Редактирование профиля") }
+      it { should have_link('изменить', href: 'http://gravatar.com/emails') }
     end
 
     describe "with invalid information" do
-    before { click_button "Save changes" }
+    before { click_button "Сохранить изменения" }
 
     it { should have_selector('div.alert.alert-danger') }
     end
@@ -154,11 +154,11 @@ describe "User pages" do
       let(:new_name)  { "New Name" }
       let(:new_email) { "new@example.com" }
       before do
-        fill_in "Name",             with: new_name
-        fill_in "Email",            with: new_email
-        fill_in "Password",         with: user.password
-        fill_in "Confirmation",     with: user.password
-        click_button "Save changes"
+        fill_in "Логин",             with: new_name
+        fill_in "Ваш email",            with: new_email
+        fill_in "Пароль",         with: user.password
+        fill_in "Подтверждение пароля",     with: user.password
+        click_button "Сохранить изменения"
       end
 
       it { should have_content(new_name) }
