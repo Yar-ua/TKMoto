@@ -1,0 +1,28 @@
+<div id='refuelingChart'></div>
+
+
+<script>
+
+  var refuelingChartConfig ={  
+    type: "area",
+    title: {
+      text: "Кол-во заправленного топлива, л"
+    }, 
+    series:[  
+      {  
+         values: <%= JSON.parse(@json_stata_refueling) %>
+      }
+    ]
+  };
+
+
+  window.onload=function(){
+
+    zingchart.render({
+      id:'refuelingChart',
+      data: refuelingChartConfig,
+      height:300,
+      width:500
+    });
+  };
+</script>

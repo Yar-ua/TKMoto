@@ -1,5 +1,10 @@
-<script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
-  
+    <script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script> zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf6d"];</script>
+
+
+
+
 <h2> Топливная статистика байка <%= @bike.name %>, владелец <%= @bike.user_name %> </h2>
 
   <% if @stata_err.errors.any? %>
@@ -32,9 +37,20 @@
   </div>
 
 </div>
+
+
+
+<% get_stata_refueling_to_chart %>
+<div>
+    
+-------------
+  <%= render 'refueling_chart', locals: @json_stata_refueling %>
+-------------
+
+</div>
+
+
 <div>
   <hr/>
     <%= render 'table_view_stata_fuel' %>
 </div>
-
-
