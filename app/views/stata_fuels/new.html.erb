@@ -1,6 +1,29 @@
-    <script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
-    <script> zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
-    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf6d"];</script>
+<script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
+<script> zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+  ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf6d"];
+</script>
+
+
+<style>
+  .del { display: none; }
+  .del:checked + label + * { display: none; }
+
+  /* вид CSS кнопки */
+  .del:not(:checked) + label,
+  .del:checked + label {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 2px;
+    color: #fff;
+    background: #4e6473;
+    cursor: pointer;
+  }
+  .del:checked + label {
+    background: #e36443;
+  }
+</style>
+
+
 
 
 
@@ -23,7 +46,7 @@
   <% end %>
 
 
-<% get_stata_l_na_100_km %>
+<% get_json_stata_for_charts %>
 
 <div class="row">
 
@@ -39,12 +62,15 @@
 </div>
 
 
-
-<% get_stata_refueling_to_chart %>
 <div>
     
 -------------
-  <%= render 'refueling_chart', locals: @json_stata_refueling %>
+  <input type="checkbox" id="raz" class="del" checked="checked" />
+  <label for="raz" class="del">еще графики</label>
+    <div>
+      <%= render 'refueling_chart', locals: @json_stata_refueling %>
+    </div>
+  
 -------------
 
 </div>
