@@ -5,6 +5,7 @@
 
 
 <style>
+
   .del { display: none; }
   .del:checked + label + * { display: none; }
 
@@ -22,10 +23,6 @@
     background: #e36443;
   }
 </style>
-
-
-
-
 
 
 <h2> Топливная статистика байка <%= @bike.name %>, владелец <%= @bike.user_name %> </h2>
@@ -68,9 +65,10 @@
   <input type="checkbox" id="raz" class="del" checked="checked" />
   <label for="raz" class="del">еще графики</label>
     <div>
-      <%= render 'refueling_chart', locals: @json_stata_refueling %>
+      <%= render 'refueling_chart' %>
     </div>
-  
+
+
 -------------
 
 </div>
@@ -80,3 +78,5 @@
   <hr/>
     <%= render 'table_view_stata_fuel' %>
 </div>
+
+
