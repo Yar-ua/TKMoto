@@ -15,8 +15,9 @@
       <% @bikes.each do |bike| %>
         <tr>
 
-          <td><%= link_to bike.name, bike %><hr/>
-            <%= link_to 'Топливная статистика', new_bike_stata_fuel_path(bike), :class => "btn btn-default btn-sm", method: :get %>
+          <td><%= link_to bike.name, bike %><br/>
+            <%= link_to 'Топливная статистика', new_bike_stata_fuel_path(bike), :class => "btn btn-default btn-sm", method: :get %><br/>
+            <%= link_to 'Ремонтная статистика', new_bike_stata_fuel_path(bike), :class => "btn btn-default btn-sm", method: :get %>
           </td>
           <td><%= bike.user_name %></td>
           <td><%= bike.year %></td>
@@ -35,5 +36,4 @@
   </table>
 
 <hr>
-
     <%= link_to 'Создать новый байк', new_bike_path, class: "btn btn-success btn-sm" %>

@@ -1,14 +1,11 @@
-<div>
-  <div id='anotherstataChart'></div>
-</div>
-
+<div id='refuelingChart'></div>
+<div id='priceChart'></div>
+<div id='odoDeltaChart'></div>
 
 
 <script>
 
-  var anotherstataChartConfig = {  
-    graphset:[
-    {
+  var refuelingChartConfig = {  
       type: "area",
       title: {
         text: "Кол-во заправляемого топлива, л",
@@ -17,9 +14,9 @@
         "label":{"text":"литры"}
       },
       series:[ { values: <%= JSON.parse(@json_stata_refueling) %> } ]
-    },
-  
-    {
+    };
+
+  var priceChartConfig = {
       type: "bar3d",
       title: {
         text: "Стоимость заправки, грн"
@@ -28,10 +25,9 @@
         "label":{"text":"грн"}
       }, 
       "series":[ { values: <%= JSON.parse(@json_stata_price_fuel) %> } ]
-    },
+    };
 
-
-    {
+  var odoDeltaChartConfig = {
       backgroundColor : "#fff",
       globals : {
         shadow : false,
@@ -85,19 +81,31 @@
         lineColor : "#E84F28"
         },
         ]
-      }
-    ]
-  };
-
+      };
+  
 
   window.onload=function(){
 
     zingchart.render({
-      id:'anotherstataChart',
-      data: anotherstataChartConfig,
-      height: "99%",
-      width: "100%"
-    });
+      id:'refuelingChart',
+      data: refuelingChartConfig,
+      height: 400,
+      width: "70%"
+    }),
+
+    zingchart.render({
+      id:'priceChart',
+      data: priceChartConfig,
+      height: 400,
+      width: "70%"
+    }),
+
+    zingchart.render({
+      id:'odoDeltaChart',
+      data: odoDeltaChartConfig,
+      height: 400,
+      width: "70%"
+    })
   };
 
 </script>
