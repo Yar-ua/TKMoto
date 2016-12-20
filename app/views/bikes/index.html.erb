@@ -17,7 +17,7 @@
 
           <td><%= link_to bike.name, bike %><br/>
             <%= link_to 'Топливная статистика', new_bike_stata_fuel_path(bike), :class => "btn btn-default btn-sm", method: :get %><br/>
-            <%= link_to 'Ремонтная статистика', new_bike_stata_fuel_path(bike), :class => "btn btn-default btn-sm", method: :get %>
+            <%= link_to 'Ремонтная статистика', new_bike_stata_repair_path(bike), :class => "btn btn-default btn-sm", method: :get %>
           </td>
           <td><%= bike.user_name %></td>
           <td><%= bike.year %></td>
