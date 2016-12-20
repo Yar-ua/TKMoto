@@ -1,4 +1,7 @@
 FactoryGirl.define do
+  factory :stata_repair do
+    
+  end
 
   factory :user do
   	sequence(:name) { |n| "Person #{n}" }
